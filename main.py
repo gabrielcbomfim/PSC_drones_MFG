@@ -48,7 +48,8 @@ def metrics(states):
     pairs[:, np.arange(2 * n), np.arange(2 * n)] = np.inf
     pairs[:, :n, n:] = pairs[:, n:, :n] = np.inf  # collisions au sein d'une même population
     return dict(captures=np.sum(k_caught < k_target), arrivees=np.sum(k_target < k_caught),
-                obstacles=in_obs.any(0).sum(), dmin=pairs.min())
+                obstacles=in_obs.any(0).sum(), dmin=pairs.min(),
+                k_caught=np.where(k_caught < k_target, k_caught, len(states)))
 
 
 if episodes > 1:
@@ -78,11 +79,16 @@ for ob in OBSTACLES:
         for y in (y0, y1):
             ax.plot([x, x], [y, y], [z0, z1], c="0.5")
 ax.plot(ARENA[0], [TARGET_Y] * 2, [TARGET_Z] * 2, "k--")
+colors = np.array(colors)
 pts = ax.scatter(*states[0, :, 0:3].T, c=colors)
 
 def update(k):
-    pts._offsets3d = states[k, :, 0:3].T
-    ax.set_title(f"t = {times[k]:.2f} s")
+    global pts
+    alive = np.ones(2 * n, bool)
+    alive[:n] = k < m["k_caught"]  # un attaquant capturé disparaît
+    pts.remove()
+    pts = ax.scatter(*states[k, alive, 0:3].T, c=colors[alive])
+    ax.set_title(f"t = {times[k]:.2f} s   capturés : {(~alive[:n]).sum()}/{n}")
 
 anim = FuncAnimation(fig, update, frames=range(0, len(times), 4), interval=20)
 if save:
