@@ -22,7 +22,7 @@ OBSTACLES = [
     np.array([[-0.55, -0.25], [-0.15, 0.15], [0.0, 2.0]]),
     np.array([[0.25, 0.55], [-0.15, 0.15], [0.0, 2.0]]),
 ]
-CAPTURE_RADIUS = 0.25
+CAPTURE_RADIUS = 0.25 #capture radius for defenders to capture attackers
 SAFETY_RADIUS = 0.12
 T = 8.0
 NU = 2.5e-4
