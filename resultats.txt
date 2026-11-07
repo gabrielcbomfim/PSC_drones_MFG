@@ -1,0 +1,24 @@
+=== seed0 ===
+50 épisodes, 5 contre 5, mode gen
+attaquants capturés          : 14%
+attaquants arrivés à la cible : 81%
+drones entrés dans un obstacle : 1%
+distance min intra-population (médiane) : 0.069 m (sécurité 0.12 m)
+=== seed1 ===
+50 épisodes, 5 contre 5, mode gen
+attaquants capturés          : 10%
+attaquants arrivés à la cible : 86%
+drones entrés dans un obstacle : 2%
+distance min intra-population (médiane) : 0.068 m (sécurité 0.12 m)
+=== seed2 ===
+50 épisodes, 5 contre 5, mode gen
+attaquants capturés          : 5%
+attaquants arrivés à la cible : 76%
+drones entrés dans un obstacle : 1%
+distance min intra-population (médiane) : 0.074 m (sécurité 0.12 m)
+=== last ===
+50 épisodes, 5 contre 5, mode gen
+attaquants capturés          : 9%
+attaquants arrivés à la cible : 69%
+drones entrés dans un obstacle : 2%
+distance min intra-population (médiane) : 0.074 m (sécurité 0.12 m)

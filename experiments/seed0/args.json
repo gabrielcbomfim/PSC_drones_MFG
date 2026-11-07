@@ -1,0 +1,19 @@
+{
+  "rounds": 6,
+  "iters": 30000,
+  "opponent": "average",
+  "batch": 50,
+  "n_opp": 32,
+  "ns": 100,
+  "hh": 0.5,
+  "disc_lr": 0.0004,
+  "gen_lr": 0.0001,
+  "lam": 1.0,
+  "nu": 0.00025,
+  "log_every": 1000,
+  "device": "cpu",
+  "threads": 1,
+  "seed": 0,
+  "out": "experiments/seed0",
+  "resume": false
+}
