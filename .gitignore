@@ -3,4 +3,6 @@ __pycache__/
 outputs/
 experiments/
 *.pt
+*.gif
+*.log
 .vscode/

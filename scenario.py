@@ -23,9 +23,17 @@ OBSTACLES = [
     np.array([[0.25, 0.55], [-0.15, 0.15], [0.0, 2.0]]),
 ]
 CAPTURE_RADIUS = 0.25 #capture radius for defenders to capture attackers
+CAPTURE_COUNT = 2     # capturé si >= 2 défenseurs à moins de CAPTURE_RADIUS (Wang et al. 2022, §4.3)
+TARGET_RADIUS = 0.2   # attaquant arrivé si dist((y, z), cible) < TARGET_RADIUS (métrique d'évaluation)
 SAFETY_RADIUS = 0.12
 T = 8.0
 NU = 2.5e-4
+
+# Coûts (Wang et al. 2022, §4.1) : attaquants c1..c5 (éq. 3, 4, 8), défenseurs l1..l4 (éq. 10, 11)
+C1, C2, C3, C4, C5 = 0.5, 1.0, 20.0, 5.0, 5.0
+L1, L2, L3, L4 = 0.5, 1.0, 20.0, 5.0
+GAMMA_OBS = 1.0
+C_ARENA = 50.0  # ajout : pénalité hors de FLIGHT (murs, sol, plafond)
 
 
 def sample_box(box, n, rng=np.random.default_rng()):
