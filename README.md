@@ -21,7 +21,7 @@ Modèle 6D (point matériel) : `x = (p, v)`, `u` = accélération de poussée.
   Hamiltonien : `H(x, ∇Φ) = −∇_pΦ·v + |∇_vΦ|²/(4c)`. Contrôle : `u* = g e_z − ∇_vΦ/(2c)`.
 - Coûts d'interaction F (Wang et al. 2022, éq. 4 et 11), poids repris du §4.1 :
 
-| terme | attaquants (bleu) | défenseurs (rouge) |
+| terme | attaquants (rouge) | défenseurs (bleu) |
 |---|---|---|
 | énergie | c1 = 0.5 | l1 = 0.5 |
 | distance à l'adversaire (moyenne en champ moyen) | −c2 · d, c2 = 1 | +l2 · d, l2 = 1 |

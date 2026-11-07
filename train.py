@@ -37,7 +37,7 @@ parser.add_argument("--resume", action="store_true", help="reprendre depuis <out
 def plot_densities(P, path, title, trained, n=200):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 5))
     times = np.linspace(0, T, 6)
-    for pop, cmap in ((mfg.ATT, plt.cm.Blues), (mfg.DEF, plt.cm.Reds)):
+    for pop, cmap in ((mfg.ATT, plt.cm.Reds), (mfg.DEF, plt.cm.Blues)):
         dev = next(P[pop]["gen"].parameters()).device
         gen = P[pop]["gen"] if pop in trained else mfg.hover  # pas encore entraîné : vol stationnaire
         y = mfg.sample_rho0(pop, n, dev)
@@ -58,7 +58,7 @@ def plot_densities(P, path, title, trained, n=200):
         ax.set_ylim(-1 if j == 1 else 0, 1 if j == 1 else 2)
         ax.set_aspect("equal")
         ax.set_title(lab)
-    fig.suptitle(title + "  (bleu = attaquants, rouge = défenseurs, clair -> foncé : t = 0 -> T)")
+    fig.suptitle(title + "  (rouge = attaquants, bleu = défenseurs, clair -> foncé : t = 0 -> T)")
     fig.savefig(path, dpi=100, bbox_inches="tight")
     plt.close(fig)
 

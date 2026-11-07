@@ -68,7 +68,7 @@ print(f"drones entrés dans un obstacle : {m['obstacles']}/{2 * n}")
 print(f"distance min intra-population    : {m['dmin']:.3f} m (sécurité {SAFETY_RADIUS} m)")
 
 # animation 3D
-colors = ["tab:blue"] * n + ["tab:red"] * n
+colors = ["tab:red"] * n + ["tab:blue"] * n  # rouge = attaquants, bleu = défenseurs
 fig = plt.figure()
 ax = fig.add_subplot(projection="3d")
 ax.set_xlim(*ARENA[0]); ax.set_ylim(*ARENA[1]); ax.set_zlim(*ARENA[2])
