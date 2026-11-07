@@ -86,7 +86,7 @@ def update(k):
 
 anim = FuncAnimation(fig, update, frames=range(0, len(times), 4), interval=20)
 if save:
-    anim.save("simulation.gif", fps=50)
+    anim.save("simulation.gif", writer="pillow", fps=50)  # pillow : pas besoin de ffmpeg
     print("simulation.gif")
 else:
     plt.show()
